@@ -1,0 +1,33 @@
+body{
+   
+    background-color: black;
+    color: white;
+    margin: 0px 292px;
+    padding: 10px 16px;
+}
+button{
+    margin: -40px 0px 0px 682px;
+    padding: 10px 16px;
+
+}
+h1, span, i{
+    display: inline;
+    font-size: 30px;
+}
+code > p{
+    background-color: rgb(85, 82, 82);
+    padding: 40px;
+}
+span{
+    color: gold;
+}
+.light-mode {
+    background-color: white;
+    color: black;
+}
+.light-mode span{
+    color: #0493d3;
+}
+.light-mode code>p{
+    background-color: #fafafa;
+}

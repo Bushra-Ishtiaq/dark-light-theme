@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c3b87437d9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <h1>whatthefork.is ·<span> a closure</span></h1>
+        <button onclick="myFunction()"><i class="fas fa-sun"></i></button>
+        <article>
+            <p>
+                Closures are confusing because they are an “invisible” concept.
+            </p>
+
+            <p>
+                When you use an object, a variable, or a function, you do this intentionally.
+                <br>
+                You think: “I’m gonna need a variable here,” and add it to your code.
+            </p>
+
+            <p>
+                Closures are different. By the time most people approach closures,
+            </p>
+
+            <p>
+                they have already used them unknowingly many
+            </p>
+
+            <p>
+                times — and it is likely that this is true for yourself, too.
+            </p>
+
+            <p>
+                So learning closures is less about understanding a
+            </p>
+
+            <p>
+                new concept and more about recognizing something
+            </p>
+
+            <p>
+                you have already been doing for a while.
+            </p>
+
+            </p>
+        </article>
+
+        <h2>tl;dr</h2>
+        <p>
+            You have a closure when a function accesses variables defined outside of it.
+            <br>
+
+            For example, this code snippet contains a closure:
+            <br>
+        </p>
+        <code>
+            <p>
+                function greetMe(yourName) {alert ("Hello" + yourName);} greetMe("World");
+                <br>
+                let users = ['Alice', 'Dan', 'Jessica'];
+                <br>
+                let query = 'A';
+                <br>
+                let user = users.filter(user => user.startsWith(query));
+            </p>
+       
+        </code>
+
+        <article>
+            <p>
+                Notice how user => user.startsWith(query) is itself a function. It uses the query variable. But the
+                query
+                variable is defined outside of that function. That’s a closure.
+            </p>
+        </article>
+        <hr>
+
+        <p>
+            You can stop reading here, if you want. The rest of this article approaches closures in a different way.
+            Instead of explaining what a closure is, it will walk you through the process of discovering closures — like
+            the first programmers did in the 1960s.
+        </p>
+        <hr>
+        <h1>
+            Step 1: Functions Can Access Outside Variables
+        </h1>
+        <p>
+            To understand closures, we need to be somewhat familiar with variables and functions. In this example, we
+            declare the food variable inside the eat function:
+        </p>
+
+        <code>
+            <p>
+                function greetMe(yourName) {alert ("Hello" + yourName);} greetMe("World");
+                <br>
+                let users = ['Alice', 'Dan', 'Jessica'];
+                <br>
+                let query = 'A';
+                <br>
+                let user = users.filter(user => user.startsWith(query));
+            </p>
+       
+        </code>
+        <p>
+            But what if we wanted to later change the food variable outside of the eat function? To do this, we can move
+            the food variable itself out of our function into the top level:
+        </p>
+        <code>
+            <p>
+                function greetMe(yourName) {alert ("Hello" + yourName);} greetMe("World");
+                <br>
+                let users = ['Alice', 'Dan', 'Jessica'];
+                <br>
+                let query = 'A';
+                <br>
+                let user = users.filter(user => user.startsWith(query));
+            </p>
+       
+        </code>
+        <p>
+            This lets us change the food “from the outside” any time that we want to:
+        </p>
+        <h1>
+            Step 2: Wrapping Code in a Function Call
+        </h1>
+        <p>
+            Let’s say we have some code:
+        </p>
+        <code>
+            <p>
+                function greetMe(yourName) {alert ("Hello" + yourName);} greetMe("World");
+            </p>
+       
+        </code>
+        <p>
+            It doesn’t matter what that code does. But let’s say that we want to run it twice.
+        </p>
+        <p>
+            One way to do it would be to copy and paste it:
+        </p>
+        <code>
+            <p>
+                /* A snippet of code */
+                /* A snippet of code */
+            </p>
+        </code>
+        <p>
+            Another way to do it would be to use a loop:
+        </p>
+        <h1>
+            Step 3: Discovering Closures
+        </h1>
+        <p>
+            Functions can access variables defined outside of them. <br>
+            Wrapping code in a function and calling it once doesn’t change the result.
+        </p>
+        <p>
+            Now let’s see what happens if we combine them.
+        </p>
+        <code>
+            <p>
+                let food = 'cheese';
+                function eat() {
+                console.log(food + ' is good');
+                eat();
+            </p>
+        </code>
+        <p>
+            Then we’ll wrap this whole example into a function, which we’re going to call once:
+        </p>
+
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
